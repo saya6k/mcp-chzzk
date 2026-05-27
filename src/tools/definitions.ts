@@ -59,7 +59,8 @@ export const toolDefinitions: Tool[] = [
   },
   {
     name: "search_channels",
-    description: "Search Chzzk channels by keyword.",
+    description:
+      "Search Chzzk channels by CHANNEL NAME. Use this to look up a specific streamer by their handle. Each result includes an `openLive` flag indicating whether the channel is currently broadcasting — combine with `get_live_status` / `get_live_detail` for live info.",
     inputSchema: {
       type: "object",
       properties: { ...keywordArg, ...sizeArg },
@@ -68,7 +69,8 @@ export const toolDefinitions: Tool[] = [
   },
   {
     name: "search_videos",
-    description: "Search Chzzk videos (VOD) by keyword.",
+    description:
+      "Search Chzzk VOD (recorded videos) by VIDEO TITLE / tags. Does NOT search live broadcasts — use `search_lives` or `search_channels` for those.",
     inputSchema: {
       type: "object",
       properties: { ...keywordArg, ...sizeArg },
@@ -77,7 +79,8 @@ export const toolDefinitions: Tool[] = [
   },
   {
     name: "search_lives",
-    description: "Search currently live Chzzk broadcasts by keyword.",
+    description:
+      "Search currently live Chzzk broadcasts by LIVE TITLE (the title the streamer set for this broadcast — NOT the channel name). If you want to find a specific streamer by handle, use `search_channels` instead.",
     inputSchema: {
       type: "object",
       properties: { ...keywordArg, ...sizeArg },
